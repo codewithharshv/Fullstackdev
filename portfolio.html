@@ -3,9 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WP Dev Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: #181818;
+            color: #fff;
+        }
+        .hero {
+            background: #111;
+            text-align: center;
+            padding: 80px 20px 40px 20px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        .hero .buttons {
+            margin-bottom: 30px;
+        }
+        .hero .btn {
+            background: #7ac142;
+            color: #181818;
+            border: none;
+            padding: 12px 32px;
+            margin: 0 10px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .hero .btn:hover {
+            background: #5ea32c;
+        }
+        .services {
+            background: #222;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .service-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .service {
+            background: #181818;
+            border-radius: 16px;
+            padding: 30px 24px;
+            width: 260px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: #7ac142;
+            margin-bottom: 16px;
+        }
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .service-desc {
+            color: #bbb;
+            font-size: 1rem;
+        }
+        .portfolio {
+            background: #181818;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .portfolio h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .portfolio-filters {
+            margin: 20px 0 30px 0;
+        }
+        .portfolio-filters .btn {
+            background: #222;
+            color: #7ac142;
+            border: 1px solid #7ac142;
+            margin: 0 6px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .portfolio-filters .btn.active,
+        .portfolio-filters .btn:hover {
+            background: #7ac142;
+            color: #181818;
+        }
+        .portfolio-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .portfolio-item {
+            background: #222;
+            border-radius: 12px;
+            width: 220px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+        .portfolio-item-title {
+            padding: 12px;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+        .testimonial {
+            background: #7ac142;
+            color: #181818;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fff;
+            margin: 0 auto 16px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .testimonial-text {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .testimonial-name {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .products {
+            background: #222;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .products h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .product {
+            background: #181818;
+            border-radius: 16px;
+            width: 220px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            padding-bottom: 20px;
+        }
+        .product img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            background: #222;
+            border-radius: 16px 16px 0 0;
+        }
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 12px 0 8px 0;
+        }
+        .product .btn {
+            background: #7ac142;
+            color: #181818;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .product .btn:hover {
+            background: #5ea32c;
+        }
+        @media (max-width: 900px) {
+            .service-list, .product-list, .portfolio-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <section class="hero">
+        <h1>Hi, I am Harsh Vishwakarma</h1>
+        <p>Welcome to my portfolio</p>
+        <div class="buttons">
+            <button class="btn">View Skills</button>
+            <button class="btn">View Work</button>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-list">
+            <div class="service">
+                <div class="service-icon">💎</div>
+                <div class="service-title">Development</div>
+                <div class="service-desc">Custom WP plugin and theme development for your business needs.</div>
+            </div>
+            <div class="service">
+                <div class="service-icon">💚</div>
+                <div class="service-title">Design</div>
+                <div class="service-desc">Modern, responsive web design to make your site stand out.</div>
+            </div>
+            <div class="service">
+                <div class="service-icon">🌍</div>
+                <div class="service-title">Seo</div>
+                <div class="service-desc">SEO optimization to help your site rank higher and reach more people.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="portfolio-filters">
+            <button class="btn active">All</button>
+            <button class="btn">Web</button>
+            <button class="btn">Design</button>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Portfolio 1">
+                <div class="portfolio-item-title">Project One</div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Portfolio 2">
+                <div class="portfolio-item-title">Project Two</div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Portfolio 3">
+                <div class="portfolio-item-title">Project Three</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="testimonial-avatar">👤</div>
+        <div class="testimonial-text">“Fast, efficient, and creative! Highly recommended for any WP project.”</div>
+        <div class="testimonial-name">- Harsh Vishwakarma</div>
+    </section>
+
+    <section class="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Product One">
+                <div class="product-title">Product One</div>
+                <button class="btn">Add to cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Product Two">
+                <div class="product-title">Product Two</div>
+                <button class="btn">Add to cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Product Three">
+                <div class="product-title">Product Three</div>
+                <button class="btn">Add to cart</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
     
 </body>
 </html>
